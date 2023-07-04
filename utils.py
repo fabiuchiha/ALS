@@ -10,6 +10,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import csv
 from itertools import combinations
 import statistics
+from datetime import datetime as dt
 
 def isfloat(num):
     try:
@@ -18,11 +19,11 @@ def isfloat(num):
     except ValueError:
         return False
 
-def dataToJSON(data, filename):
+def dataToBinary(data, filename):
     with open(filename, 'wb') as object_file:
         pickle.dump(data, object_file)
 
-def JSONtoData(fileName):
+def binaryToData(fileName):
     with open(fileName, 'rb') as object_file:
         data = pickle.load(object_file)
         return data
